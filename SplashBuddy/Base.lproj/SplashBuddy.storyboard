@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="UoU-0S-EqW">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="UoU-0S-EqW">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="12118"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
@@ -36,7 +36,7 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="SdF-5b-Pla">
                                 <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                                 <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="a2p-Aj-Ov8">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a2p-Aj-Ov8">
                                         <rect key="frame" x="-2" y="500" width="804" height="60"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Welcome to your Mac" id="M9G-bN-6f0">
                                             <font key="font" metaFont="systemThin" size="50"/>
@@ -44,7 +44,7 @@
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5IX-l2-fiO">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5IX-l2-fiO">
                                         <rect key="frame" x="-2" y="475" width="804" height="17"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Please wait while we prepare your Mac" id="bCS-gQ-vgm">
                                             <font key="font" metaFont="system"/>
@@ -58,7 +58,7 @@
                                             <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="7jp-Ob-web">
                                                 <rect key="frame" x="744" y="7" width="16" height="16"/>
                                             </progressIndicator>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="huH-bF-pmn">
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="huH-bF-pmn">
                                                 <rect key="frame" x="-2" y="7" width="566" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="562" id="4G0-cz-piN"/>
@@ -69,7 +69,7 @@
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pvw-wq-IjD">
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pvw-wq-IjD">
                                                 <rect key="frame" x="672" y="7" width="69" height="17"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Installing…" id="PWh-08-cWA">
                                                     <font key="font" metaFont="system"/>
@@ -163,7 +163,7 @@
                                                                                         <binding destination="WAE-ba-3Iy" name="value" keyPath="objectValue.icon" id="5Zg-Yo-Dzu"/>
                                                                                     </connections>
                                                                                 </imageView>
-                                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YTt-EX-sNP">
+                                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YTt-EX-sNP">
                                                                                     <rect key="frame" x="21" y="2" width="139" height="17"/>
                                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="description" id="jUX-9D-aGB">
                                                                                         <font key="font" metaFont="systemLight" size="13"/>
@@ -174,7 +174,7 @@
                                                                                         <binding destination="WAE-ba-3Iy" name="value" keyPath="objectValue.desc" id="21y-pc-hmY"/>
                                                                                     </connections>
                                                                                 </textField>
-                                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="BAf-L9-chH">
+                                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BAf-L9-chH">
                                                                                     <rect key="frame" x="21" y="23" width="139" height="17"/>
                                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="displayName" id="kOR-oN-miF">
                                                                                         <font key="font" metaFont="systemMedium" size="13"/>
@@ -315,7 +315,7 @@
                 </windowController>
                 <customObject id="w5f-5l-JPr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-476" y="-533"/>
+            <point key="canvasLocation" x="-348" y="-698"/>
         </scene>
         <!--Background view-->
         <scene sceneID="XTw-bS-hLu">
@@ -339,7 +339,7 @@
                 </viewController>
                 <customObject id="mfO-hq-4hA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="179" y="-495"/>
+            <point key="canvasLocation" x="202" y="-713"/>
         </scene>
         <!--Application-->
         <scene sceneID="FDY-y2-hvM">

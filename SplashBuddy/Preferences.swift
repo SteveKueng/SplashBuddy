@@ -20,7 +20,7 @@ class Preferences {
     public var doneParsingPlist: Bool = false
     
     internal let userDefaults: UserDefaults
-    internal let jamfLog = "/var/log/jamf.log"
+    internal let logFile = "/Library/Managed Installs/Logs/Install.log"
     
 
     
@@ -35,9 +35,9 @@ class Preferences {
         self.userDefaults = nsUserDefaults
         
         do {
-            self.logFileHandle = try FileHandle(forReadingFrom: URL(fileURLWithPath: self.jamfLog, isDirectory: false))
+            self.logFileHandle = try FileHandle(forReadingFrom: URL(fileURLWithPath: self.logFile, isDirectory: false))
         } catch {
-            Log.write(string: "Cannot read /var/log/jamf.log",
+            Log.write(string: "Cannot read \(self.logFile)",
                       cat: "Preferences",
                       level: .error)
             self.logFileHandle = nil

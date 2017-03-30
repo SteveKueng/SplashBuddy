@@ -45,7 +45,7 @@ func initRegex() -> Dictionary<Software.SoftwareStatus, NSRegularExpression?> {
     do {
         
         try re_failure = NSRegularExpression(
-            pattern: "(?<=Installation failed. The installer reported: installer: Package name is )([a-zA-Z0-9._ ]*)-([a-zA-Z0-9._]*)$",
+            pattern: "(?<=Install of )([a-zA-Z0-9._ ]*)-([a-zA-Z0-9._]*): FAILED$",
             options: re_options
         )
         
@@ -62,7 +62,7 @@ func initRegex() -> Dictionary<Software.SoftwareStatus, NSRegularExpression?> {
     do {
         
         try re_success = NSRegularExpression(
-            pattern: "(?<=Successfully installed )([a-zA-Z0-9._ ]*)-([a-zA-Z0-9._]*).pkg",
+            pattern: "(?<=Install of )([a-zA-Z0-9._ ]*)-([a-zA-Z0-9._]*): SUCCESSFUL$",
             options: re_options
         )
         

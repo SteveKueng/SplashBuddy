@@ -6,39 +6,27 @@
 	<array>
 		<dict>
 			<key>canContinue</key>
-			<false/>
+			<true/>
 			<key>description</key>
-			<string>SSO</string>
+			<string>Media Player</string>
 			<key>displayName</key>
-			<string>Enterprise Connect</string>
+			<string>VLC Media Player</string>
 			<key>iconRelativePath</key>
-			<string>enterpriseconnect.png</string>
+			<string>vlc.png</string>
 			<key>packageName</key>
-			<string>Enterprise Connect</string>
-		</dict>
-		<dict>
-			<key>canContinue</key>
-			<false/>
-			<key>description</key>
-			<string>Editor</string>
-			<key>displayName</key>
-			<string>TextMate</string>
-			<key>iconRelativePath</key>
-			<string>textmate.png</string>
-			<key>packageName</key>
-			<string>TextMate</string>
+			<string>VLC Media Player</string>
 		</dict>
 		<dict>
 			<key>canContinue</key>
 			<true/>
 			<key>description</key>
-			<string>Browser</string>
+			<string>Editor</string>
 			<key>displayName</key>
-			<string>Google Chrome</string>
+			<string>Microsoft Word</string>
 			<key>iconRelativePath</key>
-			<string>chrome.png</string>
+			<string>word.png</string>
 			<key>packageName</key>
-			<string>GoogleChrome</string>
+			<string>Microsoft Word</string>
 		</dict>
 	</array>
 	<key>assetPath</key>

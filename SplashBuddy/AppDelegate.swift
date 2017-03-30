@@ -35,12 +35,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Change this in Edit Scheme -> Run -> Info
         
         #if !DEBUG
-        
         let storyboard = NSStoryboard(name: "SplashBuddy", bundle: nil)
         backgroundController = storyboard.instantiateController(withIdentifier: "backgroundWindow") as! BackgroundWindowController
         backgroundController.showWindow(self)
         #endif
-
 
         
         // Get preferences from UserDefaults
