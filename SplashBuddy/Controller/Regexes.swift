@@ -28,7 +28,7 @@ func initRegex() -> Dictionary<Software.SoftwareStatus, NSRegularExpression?> {
     do {
         
         try re_installing = NSRegularExpression(
-            pattern: "(?<=Installing )([a-zA-Z0-9._ ]*)-([a-zA-Z0-9._]*).pkg...$",
+            pattern: "(?<=Installing )([a-zA-Z0-9._ ]*)$",
             options: re_options
         )
         
