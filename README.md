@@ -2,7 +2,7 @@
 This is a fork from https://github.com/ftiff/SplashBuddy for munki
 
 
-Create a custom munkitools.pkg for SimpleMDM or an other MDM.
+Create a custom munkitools.pkg for SimpleMDM or another MDM.
 
 ### download SplashBuddy
 ```bash
