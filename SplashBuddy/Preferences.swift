@@ -16,12 +16,13 @@ class Preferences {
     
     
     static let sharedInstance = Preferences()
-    public let logFileHandle: FileHandle?
+    public var logFileHandle1: FileHandle?
+    public var logFileHandle2: FileHandle?
     public var doneParsingPlist: Bool = false
     
     internal let userDefaults: UserDefaults
-    internal let logFile = "/Library/Managed Installs/Logs/Install.log"
-    
+    internal let logFile1 = "/Library/Managed Installs/Logs/ManagedSoftwareUpdate.log"
+    internal let logFile2 = "/Library/Managed Installs/Logs/Install.log"
 
     
     
@@ -35,14 +36,22 @@ class Preferences {
         self.userDefaults = nsUserDefaults
         
         do {
-            self.logFileHandle = try FileHandle(forReadingFrom: URL(fileURLWithPath: self.logFile, isDirectory: false))
+            self.logFileHandle1 = try FileHandle(forReadingFrom: URL(fileURLWithPath: self.logFile1, isDirectory: false))
         } catch {
-            Log.write(string: "Cannot read \(self.logFile)",
+            Log.write(string: "Cannot read \(self.logFile2)",
                       cat: "Preferences",
                       level: .error)
-            self.logFileHandle = nil
+            self.logFileHandle1 = nil
         }
         
+        do {
+            self.logFileHandle2 = try FileHandle(forReadingFrom: URL(fileURLWithPath: self.logFile2, isDirectory: false))
+        } catch {
+            Log.write(string: "Cannot read \(self.logFile2)",
+                cat: "Preferences",
+                level: .error)
+            self.logFileHandle2 = nil
+        }
         
 
         

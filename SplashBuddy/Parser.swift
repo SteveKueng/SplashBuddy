@@ -25,15 +25,22 @@ class Parser: NSObject {
         
         DispatchQueue.global(qos: .background).async {
             
-            guard let logFileHandle = Preferences.sharedInstance.logFileHandle else {
+            guard let logFileHandle1 = Preferences.sharedInstance.logFileHandle1 else {
+                // Hopefully this is already handled by Preferences class
+                return
+            }
+            guard let logFileHandle2 = Preferences.sharedInstance.logFileHandle2 else {
                 // Hopefully this is already handled by Preferences class
                 return
             }
             
-            guard let lines = logFileHandle.readLines() else {
+            guard let linesLog1 = logFileHandle1.readLines() else {
+                return 
+            }
+            guard let linesLog2 = logFileHandle2.readLines() else {
                 return
             }
-            
+            let lines = linesLog1 + linesLog2
             
             for line in lines {
                 if let software = Software(from: line) {

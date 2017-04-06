@@ -101,7 +101,11 @@ class Software: NSObject {
             
             if !matches.isEmpty {
                 name = (line as NSString).substring(with: matches[0].rangeAt(1))
-                version = (line as NSString).substring(with: matches[0].rangeAt(2))
+                if matches[0].numberOfRanges > 2 {
+                    version = (line as NSString).substring(with: matches[0].rangeAt(2))
+                } else {
+                    version = "1.0" 
+                }
                 break
             }
         }

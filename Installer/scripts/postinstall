@@ -2,6 +2,7 @@
 
 /bin/mkdir -p /Library/Managed\ Installs/Logs
 /usr/bin/touch /Library/Managed\ Installs/Logs/Install.log
+/usr/bin/touch /Library/Managed\ Installs/Logs/ManagedSoftwareUpdate.log
 /bin/launchctl load /Library/LaunchAgents/io.fti.SplashBuddy.launch.plist
 
 /usr/local/munki/managedsoftwareupdate --munkipkgsonly

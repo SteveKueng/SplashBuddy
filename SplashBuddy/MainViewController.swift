@@ -73,12 +73,12 @@ class MainViewController: NSViewController, NSTableViewDataSource {
 
         // Display Alert if /var/log/jamf.log doesn't exist
         
-        if Preferences.sharedInstance.logFileHandle == nil {
+        if Preferences.sharedInstance.logFileHandle1 == nil {
             let alert = NSAlert()
             
             alert.alertStyle = .critical
             alert.messageText = "Jamf is not installed correctly"
-            alert.informativeText = "/var/log/jamf.log is missing"
+            alert.informativeText = "log file is missing"
             alert.addButton(withTitle: "Quit")
             
             alert.beginSheetModal(for: self.view.window!) { (response) in
