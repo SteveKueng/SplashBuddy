@@ -7,7 +7,8 @@ Create a custom munkitools.pkg for SimpleMDM or an other MDM.
 ### download SplashBuddy
 ```bash
 curl -sLO https://github.com/SteveKueng/SplashBuddy/releases/download/1.0/Installer.zip
-unzip Installer.zip -d Installer```
+unzip Installer.zip -d Installer
+```
 
 ### configure SplashBuddy 
 edit Installer/payload
@@ -16,4 +17,5 @@ edit Installer/payload
 ```bash
 git clone -b Munki3 https://github.com/SteveKueng/munki.git
 cd munki
-./code/tools/make_munki_mpkg_DEP.sh -c ../Installer -s "<developer certificat>"```
+./code/tools/make_munki_mpkg_DEP.sh -c ../Installer -s "<developer certificat>"
+```
