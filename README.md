@@ -11,9 +11,40 @@ unzip Installer.zip -d Installer
 ```
 
 ### configure SplashBuddy 
-edit Installer/payload
+The packageName is the display_name key in munki
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>assetPath</key>
+        <string>/Library/SplashBuddy</string>
+        <key>postInstallAssetPath</key>
+        <string>presentation.html</string>
+        <key>applicationsArray</key>
+        <array>
+            <dict>
+                <key>canContinue</key>
+                <true/>
+                <key>description</key>
+                <string>PDF Reader</string>
+                <key>displayName</key>
+                <string>Acrobat Reader</string>
+                <key>iconRelativePath</key>
+                <string>acrobatreader.png</string>
+                <key>packageName</key>
+                <string>Acrobat Reader</string>
+            </dict>
+        </array>
+    </dict>
+</plist>
+```
+
 
 ### create munkitools with custom pkg
+the make_munki_mpkg_DEP.sh creates a pkg with everything in Installer/payload and the scripts in Installer/scripts
+
 ```bash
 git clone -b Munki3 https://github.com/SteveKueng/munki.git
 cd munki
