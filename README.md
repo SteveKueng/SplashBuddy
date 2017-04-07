@@ -11,14 +11,14 @@ unzip Installer.zip -d Installer
 ```
 
 ### configure 
-to configure the munki url you can use a profile or the postinstall script in Installer/scritps/postinstall  
-add 'defaults write /Library/Preferences/ManagedInstalls SoftwareRepoURL "http://localhost/munki_repo"' as first command.  
+to configure the munki url you can use a profile or the postinstall script in _Installer/scritps/postinstall_  
+add __defaults write /Library/Preferences/ManagedInstalls SoftwareRepoURL "http://localhost/munki_repo"__ as first command.  
 depenging on your munki repo configuration you need additional settings!
 
-customize: Installer/Library/Application Support/SplashBuddy (https://github.com/ftiff/SplashBuddy/wiki/Onboarding-Manual)
+customize: _Installer/Library/Application Support/SplashBuddy_ (https://github.com/ftiff/SplashBuddy/wiki/Onboarding-Manual)
 
-edit Installer/Library/Preferences/io.fti.SplashBuddy.plist:
-The packageName is the display_name key in munki
+edit _Installer/Library/Preferences/io.fti.SplashBuddy.plist_:
+The __packageName__ key in SpalshBuddy is __display_name__ key in munki.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -50,7 +50,7 @@ The packageName is the display_name key in munki
 
 
 ### create munkitools with custom pkg
-the make_munki_mpkg_DEP.sh creates a pkg with everything in Installer/payload and the scripts in Installer/scripts
+the make_munki_mpkg_DEP.sh creates a pkg with everything in _Installer/payload_ and the scripts in _Installer/scripts_
 
 ```bash
 git clone -b Munki3 https://github.com/SteveKueng/munki.git
