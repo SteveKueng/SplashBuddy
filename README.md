@@ -10,7 +10,14 @@ curl -sLO https://github.com/SteveKueng/SplashBuddy/releases/download/1.0/Instal
 unzip Installer.zip -d Installer
 ```
 
-### configure SplashBuddy 
+### configure 
+to configure the munki url you can use a profile or the postinstall script in Installer/scritps/postinstall  
+add 'defaults write /Library/Preferences/ManagedInstalls SoftwareRepoURL "http://localhost/munki_repo"' as first command.  
+depenging on your munki repo configuration you need additional settings!
+
+customize: Installer/Library/Application Support/SplashBuddy (https://github.com/ftiff/SplashBuddy/wiki/Onboarding-Manual)
+
+edit Installer/Library/Preferences/io.fti.SplashBuddy.plist:
 The packageName is the display_name key in munki
 
 ```
