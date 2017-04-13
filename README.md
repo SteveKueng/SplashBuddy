@@ -17,7 +17,7 @@ depenging on your munki repo configuration you need additional settings!
 
 customize: _Installer/Library/Application Support/SplashBuddy_ (https://github.com/ftiff/SplashBuddy/wiki/Onboarding-Manual)
 
-edit _Installer/Library/Preferences/io.fti.SplashBuddy.plist_:
+edit _Installer/Library/Preferences/io.fti.SplashBuddy.plist_:  
 The __packageName__ key in SpalshBuddy is __display_name__ key in munki.
 
 ```
