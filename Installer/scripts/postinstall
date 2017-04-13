@@ -6,5 +6,4 @@
 /bin/launchctl load /Library/LaunchAgents/io.fti.SplashBuddy.launch.plist
 
 /usr/local/munki/managedsoftwareupdate --munkipkgsonly
-/usr/local/munki/managedsoftwareupdate --installonly
-
+/usr/local/munki/managedsoftwareupdate --installonly &
