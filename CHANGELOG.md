@@ -13,25 +13,34 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 * An error pops up if it cannot find `/var/log/jamf.log`
 * Easy way to build a package with Installer/build_pkg.sh
 * Now using the new Logger facility from 10.12+ @cybertunnel
+* Quit SplashBuddy and set .SplashBuddyDone by using CMD+ALT+CTRL+Q (@matgriffin)
 
 ### Changed
 
 * Quit application by using CMD+ALT+Q
+* All assets must now reside in /Library/Application Support/SplashBuddy/
 * Moved from XIB to Storyboards
 * Application has been renamed from CasperSplash to SplashBuddy
 * Better HTML demo page (if no HTML asset is found)
 * Moved much of the logic out of View Controllers
 * Lots of code refactoring
-* Fixed LaunchAgent script - @smashism #26 
+* Fixed LaunchAgent script - @smashism #26
+* Now using WKWebView and localization bundle (presentation.bundle)
+* HTML view doesn't allow content outside of asset folder anymore for increased security (but remote content is ok as long as it is HTTPS)
+* Disabled application switcher and gesture to ensure this Application stays on top - @matthewsphillips #34
+* Hides all other applications on launch
 
 ### Removed
 
 * Removed the postInstall script. Pressing Continue will create the file `~/Library/Containers/io.fti.SplashBuddy/Data/Library/.SplashBuddyDone`
+* Removed `assetPath` and `htmlPath` (it is now hardcoded to `/Library/Application Support/SplashBuddy/presentation.bundle` )
 
 ### Fixed
 
 * Better automated testing with Travis
-* Compatible with Swift 3.1 and macOS 10.12.4
+* Compatible with Swift 4.0 and macOS 10.13
+* WKWebView now accepts keyboard input (can use forms)
+
 
 # Contributors
 

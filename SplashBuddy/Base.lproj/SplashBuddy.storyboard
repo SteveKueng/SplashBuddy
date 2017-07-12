@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="UoU-0S-EqW">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16G23a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="UoU-0S-EqW">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="12118"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13122.19"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="13122.19"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
@@ -13,7 +13,7 @@
         <scene sceneID="zkc-0l-Upw">
             <objects>
                 <windowController storyboardIdentifier="mainWindow" id="UoU-0S-EqW" customClass="MainWindowController" customModule="SplashBuddy" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="eOE-dw-mkn">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="eOE-dw-mkn" customClass="MainWindow" customModule="SplashBuddy" customModuleProvider="target">
                         <rect key="contentRect" x="294" y="313" width="800" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
                     </window>
@@ -92,15 +92,6 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="cgO-LI-1JY">
                                         <rect key="frame" x="20" y="50" width="760" height="405"/>
                                         <subviews>
-                                            <webView wantsLayer="YES" maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVg-yQ-h6y" customClass="MainWebView" customModule="SplashBuddy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="561" height="405"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="561" id="uXc-MD-2S7"/>
-                                                </constraints>
-                                                <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0" plugInsEnabled="NO" javaEnabled="NO" javaScriptEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO" allowsAnimatedImages="NO" allowsAnimatedImageLooping="NO">
-                                                    <nil key="identifier"/>
-                                                </webPreferences>
-                                            </webView>
                                             <scrollView appearanceType="aqua" autohidesScrollers="YES" horizontalLineScroll="42" horizontalPageScroll="10" verticalLineScroll="42" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeC-7I-iT9">
                                                 <rect key="frame" x="560" y="40" width="200" height="365"/>
                                                 <clipView key="contentView" copiesOnScroll="NO" id="76P-jR-syg">
@@ -233,16 +224,30 @@
                                                     <action selector="pressedContinueButton:" target="qDQ-T9-zeE" id="aic-6q-OXy"/>
                                                 </connections>
                                             </button>
+                                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9lx-PG-aVf">
+                                                <rect key="frame" x="0.0" y="0.0" width="561" height="405"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="561" id="idT-ha-gLs"/>
+                                                </constraints>
+                                                <wkWebViewConfiguration key="configuration">
+                                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                    <wkPreferences key="preferences" javaScriptCanOpenWindowsAutomatically="NO"/>
+                                                </wkWebViewConfiguration>
+                                                <connections>
+                                                    <outlet property="UIDelegate" destination="qDQ-T9-zeE" id="Mbx-Vw-WtP"/>
+                                                    <outlet property="navigationDelegate" destination="qDQ-T9-zeE" id="U4W-ZW-1PS"/>
+                                                </connections>
+                                            </wkWebView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="HVg-yQ-h6y" firstAttribute="bottom" secondItem="2Cu-8a-kCe" secondAttribute="bottom" id="7WO-3U-5BX"/>
-                                            <constraint firstAttribute="bottom" secondItem="HVg-yQ-h6y" secondAttribute="bottom" id="8lU-A5-U2e"/>
+                                            <constraint firstItem="9lx-PG-aVf" firstAttribute="bottom" secondItem="2Cu-8a-kCe" secondAttribute="bottom" id="5TW-qK-ARL"/>
+                                            <constraint firstItem="9lx-PG-aVf" firstAttribute="top" secondItem="jeC-7I-iT9" secondAttribute="top" id="9HP-Mo-IyL"/>
                                             <constraint firstItem="jeC-7I-iT9" firstAttribute="trailing" secondItem="2Cu-8a-kCe" secondAttribute="trailing" id="Moy-Ku-24Z"/>
                                             <constraint firstItem="jeC-7I-iT9" firstAttribute="leading" secondItem="2Cu-8a-kCe" secondAttribute="leading" id="QjY-4q-DQQ"/>
-                                            <constraint firstItem="HVg-yQ-h6y" firstAttribute="top" secondItem="jeC-7I-iT9" secondAttribute="top" id="QzT-il-DOd"/>
-                                            <constraint firstItem="HVg-yQ-h6y" firstAttribute="top" secondItem="cgO-LI-1JY" secondAttribute="top" id="e34-Ds-0dW"/>
-                                            <constraint firstItem="HVg-yQ-h6y" firstAttribute="leading" secondItem="cgO-LI-1JY" secondAttribute="leading" id="gds-jd-XPl"/>
+                                            <constraint firstItem="9lx-PG-aVf" firstAttribute="leading" secondItem="cgO-LI-1JY" secondAttribute="leading" id="Vek-Bn-4PU"/>
                                             <constraint firstItem="2Cu-8a-kCe" firstAttribute="top" secondItem="jeC-7I-iT9" secondAttribute="bottom" id="ml0-vD-fJJ"/>
+                                            <constraint firstItem="9lx-PG-aVf" firstAttribute="top" secondItem="cgO-LI-1JY" secondAttribute="top" id="tTd-8G-W2W"/>
+                                            <constraint firstAttribute="bottom" secondItem="9lx-PG-aVf" secondAttribute="bottom" id="u14-Pg-Nh7"/>
                                             <constraint firstAttribute="trailing" secondItem="jeC-7I-iT9" secondAttribute="trailing" id="yag-oB-n4z"/>
                                         </constraints>
                                     </customView>
@@ -287,7 +292,7 @@
                         <outlet property="softwareTableView" destination="8zI-tR-GNs" id="W4d-jB-ndx"/>
                         <outlet property="statusLabel" destination="huH-bF-pmn" id="iYg-8d-2PX"/>
                         <outlet property="statusView" destination="9z5-8K-Bsy" id="Dvb-uX-9FO"/>
-                        <outlet property="webView" destination="HVg-yQ-h6y" id="FXo-hc-x5M"/>
+                        <outlet property="webView" destination="9lx-PG-aVf" id="nCG-R3-Otx"/>
                     </connections>
                 </viewController>
                 <customObject id="bhw-Fr-Cnv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -315,7 +320,7 @@
                 </windowController>
                 <customObject id="w5f-5l-JPr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-348" y="-698"/>
+            <point key="canvasLocation" x="-476" y="-533"/>
         </scene>
         <!--Background view-->
         <scene sceneID="XTw-bS-hLu">
@@ -339,7 +344,7 @@
                 </viewController>
                 <customObject id="mfO-hq-4hA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="202" y="-713"/>
+            <point key="canvasLocation" x="179" y="-495"/>
         </scene>
         <!--Application-->
         <scene sceneID="FDY-y2-hvM">
@@ -355,7 +360,13 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="dbc-ap-Ogy"/>
-                                        <menuItem title="Quit SplashBuddy" keyEquivalent="q" id="2cR-1q-G3Y">
+                                        <menuItem title="Quit SplashBuddy and set .SplashBuddyDone" alternate="YES" keyEquivalent="q" id="9sK-Yv-hyG">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="quitAndSetSBDone:" target="NJu-ok-pZt" id="6Ej-DG-VnV"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Quit SplashBuddy" alternate="YES" keyEquivalent="q" id="2cR-1q-G3Y">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="terminate:" target="qTG-UB-5nt" id="Yma-gO-cpd"/>
